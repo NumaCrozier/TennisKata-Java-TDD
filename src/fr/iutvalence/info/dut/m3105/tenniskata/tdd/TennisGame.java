@@ -14,17 +14,22 @@ public class TennisGame
 		case 2: score = "thirty"; break;
 		case 3: score = "forty"; break;
 		case 4: score = "advantage in"; break;
+		case 5: score = "game in"; break;
 		}
 		
-		if (this.scoreServer == this.scoreReceiver)
+		if (this.scoreServer == this.scoreReceiver) {
 			score += "-all";
+			if (this.scoreServer == 3)
+				score = "deuce";
+		}
 		else {
 			switch(this.scoreReceiver) {
 			case 0: score += "-love"; break;
 			case 1: score += "-fifteen"; break;
 			case 2: score += "-thirty"; break;
 			case 3: score += "-forty"; break;
-			case 4: score += "advantage out"; break;
+			case 4: score = "advantage out"; break;
+			case 5: score = "game out"; break;
 			}
 		}			
 		
