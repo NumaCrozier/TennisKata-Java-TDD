@@ -7,14 +7,20 @@ public class TennisGame
 	
 	public String getScore() {
 		String score = "";
-		if(this.scorePlayer1 == 0 && this.scorePlayer2 == 0)
+		if (this.scorePlayer1 == 0 && this.scorePlayer2 == 0)
 			score = "love-all";
-		if(this.scorePlayer1 == 1 && this.scorePlayer2 == 0)
+		if (this.scorePlayer1 == 1 && this.scorePlayer2 == 0)
 			score = "fifteen-love";
+		if (this.scorePlayer1 == 0 && this.scorePlayer2 == 1)
+			score = "love-fifteen";
 		return score;
 	}
 	
 	public void addPointServer() {
 		this.scorePlayer1++;
+	}
+	
+	public void addPointOpponent() {
+		this.scorePlayer2++;
 	}
 }

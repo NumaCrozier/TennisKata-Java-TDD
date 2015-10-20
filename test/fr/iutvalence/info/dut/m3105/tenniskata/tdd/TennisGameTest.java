@@ -14,11 +14,19 @@ public class TennisGameTest
 	}
 	
 	@Test
-	public void theServerWithFifteenAndTheOthersWithZeroMustReturnStringEqualsToFifteenZero()
+	public void theServerWithFifteenAndTheOtherWithZeroMustReturnStringEqualsToFifteenLove()
 	{
 		TennisGame tennisGame = new TennisGame();
 		tennisGame.addPointServer();
 		Assert.assertEquals(tennisGame.getScore(), "fifteen-love");		
+	}
+	
+	@Test
+	public void theServerWithZeroAndTheOtherWithFifteenMustReturnStringEqualsToLoveFifteen()
+	{
+		TennisGame tennisGame = new TennisGame();
+		tennisGame.addPointOpponent();
+		Assert.assertEquals(tennisGame.getScore(), "love-fifteen");
 	}
 
 }
