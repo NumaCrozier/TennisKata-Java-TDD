@@ -7,9 +7,18 @@ import org.junit.Test;
 public class TennisGameTest
 {
 	@Test
-	public void aSimpleBeginningTest()
+	public void twoPlayersWithAScoreEqualToZeroMustReturnStringEqualsToLoveAll()
 	{
-		Assert.fail("...");
+		TennisGame tennisGame = new TennisGame();
+		Assert.assertEquals(tennisGame.getScore(), "love-all");
+	}
+	
+	@Test
+	public void theServerWithFifteenAndTheOthersWithZeroMustReturnStringEqualsToFifteenZero()
+	{
+		TennisGame tennisGame = new TennisGame();
+		tennisGame.addPointServer();
+		Assert.assertEquals(tennisGame.getScore(), "fifteen-love");		
 	}
 
 }
