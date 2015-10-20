@@ -16,19 +16,17 @@ public class TennisGame
 		case 4: score = "advantage in"; break;
 		}
 		
-		// NON FINI
-		if (this.scoreReceiver == this.scoreServer)
+		if (this.scoreServer == this.scoreReceiver)
 			score += "-all";
-		
-		
-		if (this.scoreServer == 0 && this.scoreReceiver == 0)
-			score = "love-all";
-		if (this.scoreServer == 1 && this.scoreReceiver == 0)
-			score = "fifteen-love";
-		if (this.scoreServer == 0 && this.scoreReceiver == 1)
-			score = "love-fifteen";
-		
-		
+		else {
+			switch(this.scoreReceiver) {
+			case 0: score += "-love"; break;
+			case 1: score += "-fifteen"; break;
+			case 2: score += "-thirty"; break;
+			case 3: score += "-forty"; break;
+			case 4: score += "advantage out"; break;
+			}
+		}			
 		
 		return score;
 	}
