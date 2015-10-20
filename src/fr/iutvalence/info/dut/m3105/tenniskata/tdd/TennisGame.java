@@ -2,25 +2,42 @@ package fr.iutvalence.info.dut.m3105.tenniskata.tdd;
 public class TennisGame
 {
 
-	private int scorePlayer1;
-	private int scorePlayer2;
+	private int scoreServer;
+	private int scoreReceiver;
 	
 	public String getScore() {
 		String score = "";
-		if (this.scorePlayer1 == 0 && this.scorePlayer2 == 0)
+		
+		switch(this.scoreServer) {
+		case 0: score = "love"; break;
+		case 1: score = "fifteen"; break;
+		case 2: score = "thirty"; break;
+		case 3: score = "forty"; break;
+		case 4: score = "advantage in"; break;
+		}
+		
+		// NON FINI
+		if (this.scoreReceiver == this.scoreServer)
+			score += "-all";
+		
+		
+		if (this.scoreServer == 0 && this.scoreReceiver == 0)
 			score = "love-all";
-		if (this.scorePlayer1 == 1 && this.scorePlayer2 == 0)
+		if (this.scoreServer == 1 && this.scoreReceiver == 0)
 			score = "fifteen-love";
-		if (this.scorePlayer1 == 0 && this.scorePlayer2 == 1)
+		if (this.scoreServer == 0 && this.scoreReceiver == 1)
 			score = "love-fifteen";
+		
+		
+		
 		return score;
 	}
-	
-	public void addPointServer() {
-		this.scorePlayer1++;
+
+	public void serverScores() {
+		this.scoreServer++;		
 	}
-	
-	public void addPointOpponent() {
-		this.scorePlayer2++;
+
+	public void receiverScore() {
+		this.scoreReceiver++;
 	}
 }
